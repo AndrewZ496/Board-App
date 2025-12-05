@@ -15,7 +15,7 @@ export enum LayerType {
   Rectangle,
   Ellipse,
   Path,
-}
+};
 
 export type RectangleLayer = {
   type: LayerType.Rectangle;
@@ -91,19 +91,23 @@ export type CanvasState =
   | {
       mode: CanvasMode.None;
     }
+
   | {
       mode: CanvasMode.Pressing;
       origin: Point;
     }
+
   | {
       mode: CanvasMode.SelectionNet;
       origin: Point;
       current?: Point;
     }
+
   | {
       mode: CanvasMode.Translating;
       current: Point;
     }
+
   | {
       mode: CanvasMode.Inserting;
       layerType:
@@ -112,11 +116,13 @@ export type CanvasState =
         | LayerType.Text
         | LayerType.Note;
     }
+
   | {
       mode: CanvasMode.Resizing;
       initialBounds: XYWH;
       corner: Side;
     }
+
   | {
       mode: CanvasMode.Pencil;
     };
